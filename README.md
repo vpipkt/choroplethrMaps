@@ -19,6 +19,6 @@ To install the development version use the `devtools` package:
 ```
 # install.packages("devtools")
 library(devtools)
-install_github("choroplethrMaps", "trulia")
+install_github("choroplethrMaps", "arilamstein")
 library(choroplethrMaps)
 ```
