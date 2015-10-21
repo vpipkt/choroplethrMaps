@@ -7,6 +7,8 @@ For Ari: (choroplethr)
 * create pivotal tracker board / github issues
 * 1st issue: assigned to Ari; pass R cmd check [urls are off] ? only in choroplethr
 
+Will need to update the URL. and license? 
+
 ## 04 Oct to do's
 
 * clean up `create_state_area.R` for zipfile, just use setwd() to put file in scratch
@@ -17,4 +19,10 @@ For Ari: (choroplethr)
 
 * double check object name consistency with other `choroplethr...` packages.
 
+## To dos after 21 Oct.
+
 * save `create_state_area` as a gist and note in wiki
+
+* clean up scratch\ directory
+
+* 

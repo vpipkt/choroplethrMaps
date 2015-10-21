@@ -1,4 +1,4 @@
-#' Map of the 50 US states plus the district of columbia.
+#' Map of the 50 US states plus the District of Columbia.
 #' 
 #' A data.frame which contains a map of all 50 US States plus 
 #' the District of Columbia.  The shapefile
@@ -22,6 +22,8 @@
 #' }
 NULL
 
+#' State region definitions
+#' 
 #' A data.frame consisting of each region on the map state.map plus their postal code 
 #' abbreviations and FIPS codes.
 #' 
@@ -35,4 +37,26 @@ NULL
 #' @examples
 #' data(state.regions)
 #' head(state.regions)
+NULL
+
+#' Areas of the 50 US states plus the District of Columbia
+#' 
+#' A data.frame consisting of each region on the map state.map with the total area in
+#' square kilometers and square miles. This data.frame is useful for creating measures
+#' of intensity normalized by area, such as population density.
+#' 
+#' choroplethr requires you to use the naming convention in the "region" column
+#' (i.e. all lowercase, full name).
+#' 
+#' @docType data
+#' @name state.area
+#' @usage data(state.area)
+#' @references Areas as reported by the US Census Bureau
+#' Cartographic Boundary shapefiles page (https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html) in October 2015.
+#' @examples
+#' \dontrun{
+#' data(state.area)
+#' data(state.regions)
+#' head(merge(state.area, state.regions))
+#' }
 NULL
