@@ -60,3 +60,45 @@ NULL
 #' head(merge(state.area, state.regions))
 #' }
 NULL
+
+#' Normalize state data by area
+#' 
+#' Given a data frame with a variables "region" and "value", normalizes the value
+#' by the area of the region, if the region is a state, as defined in state.regions.
+#' The returned data frame conains the normalized variable in "value", for use
+#' with choroplethr functions.
+#' 
+#' @param df A data.frame with a column named "region" and a column named "value". 
+#' Observations in the "region" column must exacly match "state.regions$region".
+#' @param unit One of "km2" for square kilometers or "mi2" for square miles. By default
+#' square kilometers is used.
+#' @return A data frame with the "value" column normalized by area.
+#' @examples
+#' \dontrun{
+#' }
+#' @export
+normalize_df_area <- function(df, unit = c("km2", "mi2")){
+  #this generates a NOTE in checking....  see also http://www.hep.by/gnu/r-patched/r-exts/R-exts_8.html
+  data(state.area, envir = environment())
+  
+  #check df is a data frame.
+  
+  #check df has a region column
+  
+  #check df has a value column
+  
+  #if df has columns named totalArea* remove them
+  
+  df2 <- merge(df, state.area, by = "region", all.x = TRUE, all.y = FALSE)
+  
+  unit <- match.arg(unit)
+  if(unit == 'mi2')
+    df2$value <- df2$value / df2$totalAreami2 
+  else
+    df2$value <- df2$value / df2$totalAreakm2 
+  
+  
+  return(merge( df[ , names(df) != "value"], 
+                df2[ , names(df2) %in% c("value", "region")], 
+                by = "region"))
+}
